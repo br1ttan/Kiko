@@ -1,0 +1,14 @@
+<mat-form-field appearance="fill">
+    <mat-label>Сортувати за</mat-label>
+    <mat-select [value]="selectedValue" #matSelect>
+        <mat-option (click)="onSortSelect()" [value]="productCategorySortEnum.Default">
+            Звичайно
+        </mat-option>
+        <mat-option (click)="onSortSelect()" [value]="productCategorySortEnum.Expensive">
+            Від дорогих до дешевих
+        </mat-option>
+        <mat-option (click)="onSortSelect()" [value]="productCategorySortEnum.Cheap">
+            Від дешевих до дорогих
+        </mat-option>
+    </mat-select>
+</mat-form-field>

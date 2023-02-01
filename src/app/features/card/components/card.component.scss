@@ -1,0 +1,45 @@
+:host {
+    max-width: 280px;
+    width: 280px;
+    overflow: auto;
+    background-color: #fff;
+
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    padding: 16px;
+    color: inherit;
+
+    .image {
+        position: relative;
+        display: block;
+        height: 170px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-height: 140px;
+        max-width: 100%;
+
+    }
+
+    .title {
+        height: 40px;
+        margin-bottom: 8px;
+        overflow: hidden;
+    }
+
+    .price {
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 20px;
+    }
+}
+
+

@@ -1,0 +1,34 @@
+<app-back-paginator class="paginator" [data]="data">
+</app-back-paginator>
+
+<mat-card class="mat-card">
+  <mat-card-content class="main">
+    <div class="gallery">
+      <a>
+        <img [src]="data.image" alt="image">
+      </a>
+    </div>
+    <div class="info">
+      <div class="title">
+        <h2>{{ data.title }}</h2>
+      </div>
+      <div class="rating">
+        <rating [data]="data"></rating>
+      </div>
+      <div class="description">
+        <p>{{ data.description }}</p>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="price">
+        <h1>{{ data.price | currencyConversionToUAH }}</h1>
+      </div>
+      <div class="actions">
+        <button 
+          (click)="emitter.emit($event)"
+          mat-flat-button color="primary">
+          Додати в кошик
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

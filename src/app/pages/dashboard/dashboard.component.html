@@ -1,0 +1,14 @@
+<app-sort class="sort"></app-sort>
+<structure-item
+    *ngIf="products$ | async as data; 
+    else loaderTemplate">
+    <app-card
+        (emitter)="onEventTrigger($event)"
+        *ngFor="let product of data"
+        [data]="product">
+    </app-card>
+</structure-item>
+
+<ng-template #loaderTemplate>
+    <app-loader></app-loader>
+</ng-template>

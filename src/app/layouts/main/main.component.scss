@@ -1,0 +1,24 @@
+:host {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    margin-top: 50px;
+    min-height: 100vh;
+    padding: 15px 30px;
+}
+
+.drawer-container {
+    margin-top: 50px;
+    width: 300px !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
+}
+
+.mat-drawer-inner-container {
+    overflow: hidden !important; 
+}

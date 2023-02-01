@@ -1,0 +1,17 @@
+<ng-container
+    *ngIf="data$ | async as data">
+    <ng-container
+        *ngIf="data.length > 0; else noDataTemplate">
+        <draggable-cards [data]="data"></draggable-cards>
+        
+        <app-total [count]="count$ | async"></app-total>
+    </ng-container>
+</ng-container> 
+
+<ng-template #loadingTemplate>
+    <app-loader></app-loader>
+</ng-template>
+
+<ng-template #noDataTemplate>
+    <div>Нічого немає...</div>
+</ng-template>

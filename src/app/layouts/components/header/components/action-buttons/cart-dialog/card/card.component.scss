@@ -1,0 +1,33 @@
+.card {
+    max-width: 900px;
+    width: 900px;
+    width: 900px;
+    margin: 10px;
+    overflow: hidden;
+    
+    .card-content {
+        padding: 20px;
+        display: flex;
+        gap: 20px;
+
+        img {
+            max-width: 100px;
+            width: 100px;
+            height: 100%;
+        }
+        
+        .card-body {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+
+            .card-body-menu {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+    }
+
+}

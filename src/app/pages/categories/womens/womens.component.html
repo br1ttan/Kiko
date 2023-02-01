@@ -1,0 +1,10 @@
+<ng-container *ngIf="data$ | async as data; else loadingTemplate">
+    <product-feed 
+      (emitter)="onEventTrigger(data)" 
+      [data]="data">
+    </product-feed>
+</ng-container>
+
+<ng-template #loadingTemplate>
+    <app-loader></app-loader>
+</ng-template>

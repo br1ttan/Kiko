@@ -1,0 +1,17 @@
+<ng-container *ngIf="data; else loadingTemplate">
+    <structure-item *ngIf="data.length > 0; else noDataTemplate">
+        <app-card
+            *ngFor="let product of data"
+            (emitter)="onEventTrigger($event)"
+            [data]="product"
+        ></app-card>
+    </structure-item>
+</ng-container>
+
+<ng-template #loadingTemplate>
+    <app-loader></app-loader>
+</ng-template>
+
+<ng-template #noDataTemplate>
+    <h2>Схоже, нічого не знайдено...</h2>
+</ng-template>

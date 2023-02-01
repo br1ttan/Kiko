@@ -1,0 +1,17 @@
+<ng-container *ngIf="auth$ | async as auth; else notAuthTemplate">
+    <app-cart
+        mat-raised-button
+        *ngIf="cartAmount$ | async as amount"
+        [amount]="amount"
+        (click)="openDialog(dialogEnum.Cart)">
+    </app-cart>
+    <user-dropdown>
+    </user-dropdown>
+</ng-container>
+
+<ng-template #notAuthTemplate>
+    <app-user-button
+        class="user"
+        (click)="openDialog(dialogEnum.Auth)">
+    </app-user-button>
+</ng-template>

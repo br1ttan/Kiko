@@ -1,0 +1,25 @@
+.registration {
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .actions {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        .already-btn {
+            color: inherit;
+            font-size: 12px;
+        
+            &:hover {
+                color: red;
+            }
+        }
+    }
+    .register-btn {
+        font-size: 16px;
+    }
+    
+}

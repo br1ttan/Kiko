@@ -1,0 +1,85 @@
+<div class="registration">
+    <form 
+        [formGroup]="form"
+        (ngSubmit)="onFormSubmit()">
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Ім'я</mat-label>
+            <input
+                matInput 
+                formControlName="name">
+            <mat-error 
+                *ngIf="isControlInvalid('name')">
+                {{ requiredErrorMessage }}
+        </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field 
+            appearance="fill">
+            <mat-label>Прізвище</mat-label>
+            <input 
+                matInput 
+                formControlName="surname">
+            <mat-error 
+            *ngIf="isControlInvalid('surname')">
+            {{ requiredErrorMessage }}
+        </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field 
+            appearance="fill">
+            <mat-label>Введіть емейл</mat-label>
+            <input 
+                matInput 
+                placeholder="brittanvladislav@example.com" 
+                formControlName="email">
+            <mat-error 
+                *ngIf="isControlInvalid('email')">
+                {{ emailErrorMessage }}
+            </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field 
+            appearance="fill">
+            <mat-label>Придумайте пароль</mat-label>
+            <input 
+                matInput 
+                [type]="inputType" 
+                formControlName="password">
+            <mat-error 
+                *ngIf="isControlInvalid('password')">
+                {{ passwordErrorMessage }}
+            </mat-error>
+    
+            <button 
+                mat-icon-button 
+                matSuffix
+                type="button"
+                (click)="onToggleHideButtonClick()" 
+                [attr.aria-label]="'Hide password'" 
+                [attr.aria-pressed]="isPasswordIconHide">
+              <mat-icon>
+                {{ iconPasswordVisibility }}
+            </mat-icon>
+            </button>
+        </mat-form-field>
+    
+        <div class="actions">
+            
+        <button
+            [disabled]="isFormValid"
+            type="submit"
+            class="register-btn" 
+            mat-raised-button 
+            color="primary">
+            Зареєструватися
+        </button>
+        
+        <a 
+            (click)="onToggleMenuButtonClick.emit($event)" 
+            class="already-btn">
+            Я вже зареєстрованний
+        </a>
+    </div>
+    </form>
+</div>

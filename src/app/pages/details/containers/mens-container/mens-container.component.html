@@ -1,0 +1,13 @@
+<ng-container *ngIf="data$ | async as data; else loadingTemplate">
+    <structure-item>
+        <app-card
+        (emitter)="onEventTrigger($event)"
+        *ngFor="let product of data" 
+        [data]="product">
+        </app-card>
+    </structure-item>
+</ng-container>
+
+<ng-template #loadingTemplate>
+    <app-loader></app-loader>
+</ng-template>

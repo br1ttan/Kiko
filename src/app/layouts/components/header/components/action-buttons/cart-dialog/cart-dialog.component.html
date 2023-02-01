@@ -1,0 +1,23 @@
+<div class="cart">
+    <ng-container
+        *ngIf="isCardEmpty; else notEmptyCartTemplate">
+        <empty-cart></empty-cart>
+    </ng-container>
+
+    <ng-template #notEmptyCartTemplate>
+        <ng-container *ngIf="productList$ | async as productList">
+            <cart-card
+                *ngFor="let product of productList"
+                [data]="product">
+            </cart-card>
+            <div class="total">
+                <button
+                    *ngIf="count$ | async as count"
+                    mat-flat-button color="primary"
+                    (click)="onNavigateButtonClick()">
+                    Всього: {{ count }}
+                </button>
+            </div>
+        </ng-container>
+    </ng-template>
+</div>

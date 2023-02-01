@@ -1,0 +1,17 @@
+<mat-dialog-content>
+    
+    <ng-container 
+        *ngIf="isDefaultStateLogin; 
+        else registrationTemplate">
+        <app-login 
+            (onToggleMenuButtonClick)="toggleMenu()">
+        </app-login>
+    </ng-container>
+
+    <ng-template #registrationTemplate>
+        <app-registration
+            (onToggleMenuButtonClick)="toggleMenu()">
+        </app-registration>
+    </ng-template>
+
+</mat-dialog-content>

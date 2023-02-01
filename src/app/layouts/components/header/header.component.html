@@ -1,0 +1,19 @@
+<header class="header">
+    <nav class="nav">
+           <div class="action-menu">
+            <button mat-mini-fab color="primary" (click)="menuButtonClick.emit($event)">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <a class="logo" routerLink="/">
+                Kiko Store
+            </a>
+           </div>
+           <div class="action-menu">
+                <app-search>
+                </app-search>
+
+                <action-buttons>
+                </action-buttons>
+           </div>
+    </nav>
+</header>

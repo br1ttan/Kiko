@@ -1,0 +1,55 @@
+:host {
+    max-height: 56px;
+    height: 56px;
+    background-color: #3f51b5;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    width: 100%;
+    -webkit-box-shadow: 11px 12px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 11px 12px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 11px 12px 8px 0px rgba(34, 60, 80, 0.2);
+    
+    .header {
+        height: 100%;
+        
+        .nav {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .action-menu {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+    }
+}
+
+.logo {
+    color: #fff;
+    text-decoration: underline;
+    
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:active {
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 480px) {
+    :host {
+        .logo {
+            display: none;
+        }
+    }
+}

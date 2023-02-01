@@ -1,0 +1,12 @@
+<div
+    #cardParent
+    (dragover)="onDragOver($event)"
+    class="card-parent">
+    <checkout-card
+        draggable="true"
+        draggableDirective
+        *ngFor="let product of data"
+        class="card"
+        [data]="product">
+    </checkout-card>
+</div>

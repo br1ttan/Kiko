@@ -1,0 +1,40 @@
+.tree {
+    display: flex;
+    flex-direction: column;
+    
+    .tree:not(:last-child) {
+        gap: 20px;
+    }
+}
+
+.tree-node {
+    font-size: 20px;
+    display: flex;
+}
+
+.tree-child {
+    font-size: 15px;
+    padding-left: 10%;
+
+    a {
+        position: relative;
+    }
+
+    a::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -25px;
+        background-color: black;
+        width: 20px;
+        height: 1px;
+    }
+}
+
+.active {
+    background-color: red;
+}
+
+.f {
+    background-color: red;
+}

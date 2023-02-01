@@ -1,0 +1,64 @@
+<div class="login">
+    <form 
+        [formGroup]="form"
+        (ngSubmit)="onFormSubmit()">
+
+        <mat-form-field 
+            appearance="fill">
+            <mat-label>Введіть свій емейл</mat-label>
+            <input
+                matInput 
+                placeholder="brittanvladislav@example.com" 
+                formControlName="email">
+            <mat-error 
+                *ngIf="isControlInvalid('email')">
+                {{ emailErrorMessage }}
+            </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field 
+            appearance="fill">
+            <mat-label>Введіть свій пароль</mat-label>
+            <input 
+                matInput 
+                [type]="inputType" 
+                formControlName="password">
+            <mat-error 
+                *ngIf="isControlInvalid('password')">
+                {{ requiredErrorMessage }}
+            </mat-error>
+
+            <button
+                type="button"
+                mat-icon-button 
+                matSuffix 
+                (click)="onToggleHideButtonClick()">
+
+            <mat-icon>
+                {{ iconPasswordVisibility }}
+            </mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-error
+            *ngIf="isLoginError">
+            Будь-ласка, введіть правильні дані...
+        </mat-error>
+
+        <div class="actions">
+            <button
+                [disabled]="isFormValid"
+                type="submit"
+                mat-raised-button 
+                color="primary" 
+                class="login-btn">
+                Увійти
+            </button>
+
+            <a 
+                (click)="onToggleMenuButtonClick.emit($event)" 
+                class="register-btn">
+                Зареєструватися
+            </a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<mat-card class="card">
+    <div class="card-content">
+        <img [src]="data.image" alt="image">
+        {{ data.productId }}
+        <div class="card-body">
+            <p> {{ data.title }} </p>
+            <div class="card-body-menu">
+                <button
+                    (click)="onButtonDeleteClick(data)"
+                     mat-mini-fab color="primary">
+                    <mat-icon>delete</mat-icon>
+                </button>
+
+                <div> {{ data.price | currencyConversionToUAH }} </div>
+            </div>
+        </div>
+    </div>
+</mat-card>

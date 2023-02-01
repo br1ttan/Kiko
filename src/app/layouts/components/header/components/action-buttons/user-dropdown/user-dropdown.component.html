@@ -1,0 +1,11 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>person_pin</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+    <button [routerLink]="'checkout'" mat-menu-item>
+        Профіль
+    </button>
+    <button (click)="onButtonLogoutClick()" mat-menu-item>
+        Вийти
+    </button>
+</mat-menu>

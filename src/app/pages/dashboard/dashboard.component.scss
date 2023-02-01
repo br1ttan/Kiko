@@ -1,0 +1,17 @@
+form {
+    -webkit-box-shadow: 2px -1px 72px 11px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 2px -1px 72px 11px rgba(34, 60, 80, 0.2);
+    box-shadow: 2px -1px 72px 11px rgba(34, 60, 80, 0.2);
+
+    input {
+        outline: none;
+        height: 50px;
+        border: none;
+        width: 600px;
+    }
+}
+
+.sort {
+    display: flex;
+    justify-content: flex-end;
+}

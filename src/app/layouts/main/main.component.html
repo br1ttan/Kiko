@@ -1,0 +1,19 @@
+<div *ngIf="mode$ | async as mode">
+    <app-header
+        (menuButtonClick)="drawer.toggle()">
+    </app-header>
+
+    <mat-drawer-container>
+            <mat-drawer 
+                #drawer 
+                class="drawer-container" 
+                [mode]="mode" opened>
+                <app-sidebar></app-sidebar>
+            </mat-drawer>
+        <mat-drawer-content>
+            <div class="wrapper">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

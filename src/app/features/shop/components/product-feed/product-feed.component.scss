@@ -1,0 +1,39 @@
+:host {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mat-card {
+    max-width: 900px;
+    width: 800px;
+}
+
+.main {
+    gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+img {
+    max-width: 300px;
+    width: 300px;
+    max-height: 310px;
+    height: 310px;
+}
+
+.price {
+    color: red;
+}
+
+.actions {
+    margin-top: 50px;
+}
+
+.paginator {
+    z-index: 20;
+    position: fixed;
+    bottom: 50px;
+    right: 120px;
+}

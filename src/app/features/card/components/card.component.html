@@ -1,0 +1,30 @@
+<!-- <mat-card class="card">
+    <mat-card-content>
+        <a (click)="onButtonClick(data.category, data.id)">
+            <img 
+                mat-card-image 
+                [src]="data.image" alt="photo of a goods">
+        </a>
+        <a
+            (click)="onButtonClick(data.category, data.id)">
+            <mat-card-title>
+            {{ data.title | cutTitle }} 
+            </mat-card-title>   
+        </a>
+        <p> 
+            {{ data.price | currencyConversionToUAH }} 
+        </p>
+    </mat-card-content>
+</mat-card> -->
+
+<div class="card">
+    <a (click)="onButtonClick(data.category, data.id)" class="image">
+        <img [src]="data.image" alt="product">
+    </a>
+    <a (click)="onButtonClick(data.category, data.id)" class="title">
+        {{ data.title }}
+    </a>
+    <div class="price">
+        {{ data.price | currencyConversionToUAH }}
+    </div>
+</div>
