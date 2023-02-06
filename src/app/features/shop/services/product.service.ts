@@ -1,10 +1,9 @@
-import { Injectable, Type } from '@angular/core';
-import { Observable, map, switchMap, of, take, BehaviorSubject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, switchMap, of } from 'rxjs';
 import { ConvertPriceToUahAdaptor } from '../adaptors';
 import { ProductApi } from '../api';
-import { ProductCategoryEnum, ProductSortedEnum } from '../enums';
+import { ProductCategoryEnum } from '../enums';
 import { IProduct } from '../interfaces';
-import { SortedProductState } from '../states';
 
 @Injectable({
     providedIn: 'root'

@@ -1,4 +1,4 @@
-import { HostListener, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { SidebarModeState } from "../states";
 import { Observable } from 'rxjs';
 import { MatDrawerMode } from '@angular/material/sidenav';

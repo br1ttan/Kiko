@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SortedProductState } from '../states';
-import { Observable, of, switchMap, map, take } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 import { IProduct } from '../interfaces';
 import { ProductService } from './product.service';
 import { ConvertPriceToUahAdaptor } from '../adaptors';

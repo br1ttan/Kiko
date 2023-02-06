@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, AfterViewInit, OnInit, Component, ViewChild } from '@angular/core';
 import { MatSelect } from '@angular/material/select';
-import { ProductService } from '@features';
 import { ProductSortedEnum } from '@features/shop/enums';
 import { SortedProductBySorterService } from '@features/shop/services/sorted-product-by-sorter.service';
 

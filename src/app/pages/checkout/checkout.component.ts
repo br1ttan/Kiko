@@ -1,7 +1,5 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
-import { CartService, ProductService } from '@features';
-import { map } from 'rxjs';
-import { CardComponent } from './draggable-cards/card';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CartService } from '@features';
 
 @Component({
   selector: 'app-checkout',

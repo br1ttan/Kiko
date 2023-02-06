@@ -8,9 +8,9 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 })
 export class CartComponent {
   @Input()
-  public amount?: number;
+  public amount!: number;
 
   public get amountInCart(): number | null {
-      return this.amount!;
+      return this.amount;
   }
 }

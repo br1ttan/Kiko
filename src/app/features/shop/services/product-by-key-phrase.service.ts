@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, map, tap, switchMap, of } from 'rxjs';
+import { Observable, switchMap, of } from 'rxjs';
 import { ConvertByPhraseProductAdaptor } from '../adaptors/convert-by-phrase-products.adaptor';
-import { ProductApi } from '../api';
 import { IProduct } from '../interfaces';
 import { ProductService } from './product.service';
 
@@ -19,7 +18,7 @@ export class ProductByKeyPhrase {
             .pipe(
                 switchMap((products) => (
                     this.convertedByPhraseProductAdaptor.convert(of(products), phrase))
-                ),
-            )
+                )
+            );
     }
 }

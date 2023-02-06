@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import { Component, EventEmitter, Output, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IUserAuthData, RegistrationService } from '@features/auth';
 import { Subject, takeUntil } from 'rxjs';

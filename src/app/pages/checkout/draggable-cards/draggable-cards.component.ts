@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, V
 import { IProduct } from '@features';
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'draggable-cards',
   templateUrl: './draggable-cards.component.html',
   styleUrls: ['./draggable-cards.component.scss'],
@@ -56,7 +57,7 @@ export class DraggableCardsComponent implements AfterViewInit {
     currentElement.nextElementSibling;
     
     return nextElement;
-  };
+  }
 
   public onDragOver(event: MouseEvent): void{
     event.preventDefault();

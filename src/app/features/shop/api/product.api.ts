@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, mapTo, Observable, switchMap, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ProductCategoryEnum } from '../enums';
 import { IProduct } from '../interfaces';
 

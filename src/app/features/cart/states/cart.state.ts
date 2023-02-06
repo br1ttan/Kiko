@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { IProduct } from '@features/shop';
-import { ProductCategoryEnum } from '@features/shop/enums';
-import { BehaviorSubject, tap, Observable, filter, map } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'

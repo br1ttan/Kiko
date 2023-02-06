@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subscription, of, switchMap, forkJoin } from 'rxjs';
-import { ProductApi } from '../api';
+import { Observable, of, switchMap, forkJoin } from 'rxjs';
 import { ProductCategoryEnum } from '../enums';
-import { IProduct, IProductByCategory } from '../interfaces';
+import { IProductByCategory } from '../interfaces';
 import { ProductService } from './product.service';
 
 @Injectable({
@@ -22,6 +21,6 @@ export class ProductByCategoryService {
                     mens: this.productService.getByCategory(ProductCategoryEnum.MensClothing),
                     womens: this.productService.getByCategory(ProductCategoryEnum.WomensClothing),
                 }))
-            )
+            );
     }
 }

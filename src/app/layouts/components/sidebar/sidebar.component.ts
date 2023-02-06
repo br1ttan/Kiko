@@ -1,6 +1,4 @@
-import { Component, ChangeDetectionStrategy, HostListener, inject, ViewChild } from '@angular/core';
-import { MatSelect } from '@angular/material/select';
-import { Router } from '@angular/router';
+import { Component, ChangeDetectionStrategy, HostListener } from '@angular/core';
 import { detailRouterLinkEnum } from '@core';
 import { SidebarModeService } from '@features';
 

@@ -1,4 +1,4 @@
-import { Directive, inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService, CurrentProductById, IProduct } from '@features';
 import { ProductCategoryEnum } from '@features/shop/enums';

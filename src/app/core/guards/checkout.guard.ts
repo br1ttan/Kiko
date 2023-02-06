@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate, CanActivateChild, Router, UrlTree } from '@angular/router';
 import { AuthService } from '@features/auth';
 import { Observable, of } from 'rxjs';
 
@@ -12,9 +12,7 @@ export class CheckoutGuard implements CanActivate, CanActivateChild {
     private readonly router: Router
   ) {}
 
-  public canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  public canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (this.authService.isAuthenticated) {
       return of(true);
     }
@@ -23,9 +21,7 @@ export class CheckoutGuard implements CanActivate, CanActivateChild {
     return of(false);
   }
   
-  public canActivateChild(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    return this.canActivate(route, state);
+  public canActivateChild(): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    return this.canActivate();
   }
 }

@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { PRODUCT_NAVIGATION_MAP } from '@core';
-import { INavigationCard, ProductService } from '@features';
+import { INavigationCard } from '@features';
 
 export abstract class ContainerBaseFeed {
     private readonly router = inject(Router);
