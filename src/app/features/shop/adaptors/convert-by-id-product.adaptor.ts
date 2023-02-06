@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from '../interfaces';
-import { Observable, map, of } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { ProductCategoryEnum } from '../enums';
 import { ProductService } from '../services';
 

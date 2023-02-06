@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output, OnDestroy, ChangeDetectionStrategy, Ch
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginService } from '@features/auth';
-import { timer, mergeMap, takeUntil, Subject } from 'rxjs';
+import { timer, mergeMap, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-login',

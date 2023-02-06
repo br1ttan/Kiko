@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { IProduct } from '@features/shop';
 import { CartState } from '../states';
-import { Observable, map, takeUntil, Subject, of } from 'rxjs';
+import { Observable, map, Subject, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 
 @Injectable({

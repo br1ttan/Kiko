@@ -15,6 +15,6 @@ export class JeweleryContainerComponent extends ContainerBaseFeed {
     constructor(
       private readonly productService: ProductService
     ) {
-      super()
+      super();
     }
 }

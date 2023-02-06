@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PRODUCT_NAVIGATION_MAP } from '@core';
-import { IProduct, INavigationCard, ProductByKeyPhrase } from '@features';
-import { pipe, map, filter, tap, switchMap, switchAll, takeUntil, Subject, of } from 'rxjs';
+import { IProduct, INavigationCard } from '@features';
+import { takeUntil, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-search',

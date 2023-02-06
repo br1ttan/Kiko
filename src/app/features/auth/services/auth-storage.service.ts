@@ -1,4 +1,4 @@
-import { Inject, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { AuthStorageApi } from "../api";
 import { IUserResponse } from "../interfaces";
 

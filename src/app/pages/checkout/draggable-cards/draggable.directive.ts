@@ -1,9 +1,8 @@
-import { Directive, ElementRef, OnInit, HostListener, HostBinding, AfterViewInit } from '@angular/core';
-import { CheckoutComponent } from '../checkout.component';
+import { Directive, ElementRef, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
+    // eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[draggableDirective]',
-    host: {class: 'selected'}
 })
 export class DraggableDirective {
     

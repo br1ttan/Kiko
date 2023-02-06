@@ -1,10 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { PRODUCT_NAVIGATION_MAP } from '@core';
-import { INavigationCard, IProduct, ProductService, ProductByCategoryService } from '@features';
+import { INavigationCard, IProduct, ProductByCategoryService } from '@features';
 import { SortedProductBySorterService } from '@features/shop/services/sorted-product-by-sorter.service';
-import { Observable, tap } from 'rxjs';
-import { DraggableDirective } from '../checkout/draggable-cards/draggable.directive';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +21,6 @@ export class DashboardComponent {
   constructor(
     private readonly sortedProducts: ProductByCategoryService,
     private readonly router: Router,
-    private readonly productService: ProductService,
     private readonly sortedProduct: SortedProductBySorterService
   ) {}
 

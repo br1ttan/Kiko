@@ -2,6 +2,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CartService, IProduct } from '@features';
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'cart-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],

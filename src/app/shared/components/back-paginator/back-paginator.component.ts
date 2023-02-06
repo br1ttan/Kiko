@@ -19,7 +19,8 @@ export class BackPaginatorComponent {
   ) {}
 
   public onNavigateButtonClick(category: ProductCategoryEnum) {
-    this.router.navigateByUrl
-    (`details/${PRODUCT_NAVIGATION_MAP.get(category)}`);
+    this.router.navigateByUrl(
+      `details/${PRODUCT_NAVIGATION_MAP.get(category)}`
+    );
   }
 }

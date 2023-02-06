@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppRouteEnum, CategoriesEnum, CheckoutGuard } from '@core';
+import { AppRouteEnum, CheckoutGuard } from '@core';
 import { MainLayoutComponent } from '@layouts';
 
 const routes: Routes = [
@@ -28,7 +28,6 @@ const routes: Routes = [
        path: AppRouteEnum.Details,
        loadChildren: () => import('./pages/details')
          .then((m) => m.DetailsModule),
-      
       },
     ]
   },

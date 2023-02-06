@@ -1,8 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CartService, CurrentProductById, IProduct } from '@features';
 import { ProductCategoryEnum } from '@features/shop/enums';
-import { switchMap, map } from 'rxjs';
 import { ProductFeedBase } from '../product-feed-base.component';
 
 @Component({
@@ -13,6 +10,6 @@ import { ProductFeedBase } from '../product-feed-base.component';
 })
 export class JeweleryComponent extends ProductFeedBase {
   constructor() {
-    super(ProductCategoryEnum.Jewelery)
+    super(ProductCategoryEnum.Jewelery);
   }
 }

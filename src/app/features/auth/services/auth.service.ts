@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy, OnInit } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { filter, Observable, Subject, takeUntil } from 'rxjs';
 import { IUserResponse } from '../interfaces';
 import { AuthState } from '../states';

@@ -1,3 +1,5 @@
+/* eslint-disable @angular-eslint/component-selector */
+/* eslint-disable @angular-eslint/use-lifecycle-interface */
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IProduct } from '@features';
 
@@ -9,7 +11,7 @@ import { IProduct } from '@features';
 })
 export class RatingComponent {
   @Input()
-  public data?: IProduct;
+  public data!: IProduct;
 
   public get rate() {
     return this.data?.rating.rate;
@@ -22,7 +24,7 @@ export class RatingComponent {
   }
 
   public initCountRate(): void {
-    for (let i = 0; i < Math.round(this.rate!); i++) {
+    for (let i = 0; i < Math.round(this.rate); i++) {
       this.rateCount.push(i);
     }
   }

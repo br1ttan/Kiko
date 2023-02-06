@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ProductService } from '@features';
 import { ProductCategoryEnum } from '@features/shop/enums';
 import { ContainerBaseFeed } from '../container-base-feed.component';

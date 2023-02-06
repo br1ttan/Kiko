@@ -17,7 +17,7 @@ export class AuthStorageApi {
         const userData = this.localStorage.getItem('userData');
 
         if (userData) {
-            return JSON.parse(userData!);
+            return JSON.parse(userData);
         }
 
         return null;
