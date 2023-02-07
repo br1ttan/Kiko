@@ -11,8 +11,6 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CartDialogComponent {
-  public isCardEmpty = false;
-
   public get productList$(): Observable<IProduct[]> {
     return this.cartService.get$;
   }
