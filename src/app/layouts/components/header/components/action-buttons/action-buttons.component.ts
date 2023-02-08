@@ -19,7 +19,7 @@ export class ActionButtonsComponent {
   }
 
   constructor(
-    private readonly dialog: MatDialog,
+    private readonly matDialog: MatDialog,
     private readonly cartService: CartService,
     private readonly authService: AuthService
   ) {}
@@ -27,6 +27,6 @@ export class ActionButtonsComponent {
   public openDialog(component: DialogComponentEnum): void {
     const selectedComponent = DIALOG_COMPONENT_MAP.get(component);
 
-    this.dialog.open(selectedComponent!);
+    this.matDialog.open(selectedComponent!);
   }
 }

@@ -10,7 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class CartService implements OnDestroy {
     public get get$(): Observable<IProduct[] | []> {
         if (this.cartState.getValue.length < 1) {
-            this.dialog.closeAll();
+            this.matDialog.closeAll();
             return of([]);
         }
         
@@ -41,7 +41,7 @@ export class CartService implements OnDestroy {
 
     constructor(
         private readonly cartState: CartState,
-        private readonly dialog: MatDialog
+        private readonly matDialog: MatDialog
     ) {}
 
     public ngOnDestroy(): void {
