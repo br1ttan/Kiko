@@ -55,7 +55,7 @@ export class LoginComponent implements OnDestroy {
   constructor(
     private readonly loginService: LoginService,
     private readonly changeDetector: ChangeDetectorRef,
-    private readonly dialog: MatDialog
+    private readonly matDialog: MatDialog
   ) {}
 
   public ngOnDestroy(): void {
@@ -86,7 +86,7 @@ export class LoginComponent implements OnDestroy {
       )
       .subscribe({
         next: (res) => {
-          this.dialog.closeAll();          
+          this.matDialog.closeAll();          
           this.isLoginError = false;
           this.form.reset();
           this.changeDetector.markForCheck();
