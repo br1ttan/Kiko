@@ -1,24 +1,30 @@
-import { Injectable } from "@angular/core";
-import { AuthStorageApi } from "../api";
+import { Inject, Injectable } from "@angular/core";
+import { STORAGE_TOKEN } from "../data";
 import { IUserResponse } from "../interfaces";
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthStorageService {
-    constructor(
-        private readonly authStorageApi: AuthStorageApi
-    ) {}
+    public get getUserData(): IUserResponse | null {
+        const userData = this.storage.getItem('userData');
 
-    public get get(): IUserResponse | null {
-        return this.authStorageApi.get();
+        if (userData) {
+            return JSON.parse(userData);
+        }
+
+        return null;
     }
     
-    public set set(userData: IUserResponse) {
-        this.authStorageApi.set(userData);
+    public set setUserData(userData: IUserResponse) {
+        this.storage.setItem('userData', JSON.stringify(userData));
     }
 
-    public removeItem(): void {
-        this.authStorageApi.removeItem();
+    constructor(
+        @Inject(STORAGE_TOKEN) private readonly storage: Storage
+    ) {}
+
+    public removeUserData(): void {
+        this.storage.removeItem('userData');
     }
 }

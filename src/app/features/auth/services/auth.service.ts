@@ -29,7 +29,7 @@ export class AuthService implements OnDestroy {
     }
     
     public autoLogin(): void {
-        const response = this.authStorageService.get;
+        const response = this.authStorageService.getUserData;
 
         if (response !== null) {
             this.set(response);
@@ -46,13 +46,13 @@ export class AuthService implements OnDestroy {
                 takeUntil(this.subject$)
             )
             .subscribe((userData) => (
-                this.authStorageService.set = (userData!)
+                this.authStorageService.setUserData = (userData!)
             ))
     }
     
     public logout(): void {
         this.set(null);
-        this.authStorageService.removeItem();
+        this.authStorageService.removeUserData();
     }
 
     public set(userData: IUserResponse | null): void {
