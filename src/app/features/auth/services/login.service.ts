@@ -15,8 +15,6 @@ export class LoginService {
     ) {}
 
     public login(user: IUserAuthData): Observable<IUserResponse> {
-        user.returnSecureToken = true;
-
         return this.api.login(user)
             .pipe(
                 tap((response) => this.setAuthIfValid(response))
