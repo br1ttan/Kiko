@@ -11,9 +11,9 @@ import { ContainerBaseFeed } from '../container-base-feed.component';
 })
 export class ElectronicsContainerComponent extends ContainerBaseFeed {
   public data$ = this.productService.getByCategory(ProductCategoryEnum.Electronics);
-  
+
   constructor(
-    private readonly productService: ProductService,
+    private readonly productService: ProductService
   ) {
     super()
   }

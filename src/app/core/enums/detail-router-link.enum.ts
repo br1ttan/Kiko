@@ -1,5 +1,5 @@
 export enum detailRouterLinkEnum {
-    Jewelery = 'details/jewelery',
+    Jewelry = 'details/jewelry',
     Mens = 'details/mens',
     Womens = 'details/womens',
     Electronics = 'details/electronics'

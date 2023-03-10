@@ -17,7 +17,7 @@ export class ProductByCategoryService {
             .pipe(
                 switchMap(() => forkJoin({
                     electronics: this.productService.getByCategory(ProductCategoryEnum.Electronics),
-                    jewelery: this.productService.getByCategory(ProductCategoryEnum.Jewelery),
+                    jewelry: this.productService.getByCategory(ProductCategoryEnum.Jewelry),
                     mens: this.productService.getByCategory(ProductCategoryEnum.MensClothing),
                     womens: this.productService.getByCategory(ProductCategoryEnum.WomensClothing),
                 }))

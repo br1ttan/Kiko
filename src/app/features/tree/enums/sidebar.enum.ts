@@ -1,3 +1,3 @@
 export enum SidebarEnum {
-    Jewelery = 'jewelery'
+    Jewelry = 'jewelry'
 }

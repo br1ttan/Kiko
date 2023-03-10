@@ -1,5 +1,5 @@
 export enum CategoriesEnum {
-    Jewelery = 'jewelery',
+    Jewelry = 'jewelry',
     Electronics = 'electronics',
     Mens = 'mens',
     Womens = 'womens'

@@ -2,7 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DetailsComponent } from './details.component';
 import { DetailsRouting } from './details.routing';
-import { ElectronicsContainerModule, JeweleryContainerModule, MensContainerModule, WomensContainerModule } from './containers';
+import { 
+  ElectronicsContainerModule, 
+  JewelryContainerModule, 
+  MensContainerModule, 
+  WomensContainerModule 
+} from './containers';
 
 @NgModule({
   declarations: [
@@ -10,7 +15,7 @@ import { ElectronicsContainerModule, JeweleryContainerModule, MensContainerModul
   ],
   imports: [
     CommonModule,
-    JeweleryContainerModule,
+    JewelryContainerModule,
     ElectronicsContainerModule,
     WomensContainerModule,
     MensContainerModule,

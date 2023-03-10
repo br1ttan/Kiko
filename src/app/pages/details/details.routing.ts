@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CategoriesEnum } from '@core';
+import { CategoriesEnum, QueryRouteEnum } from '@core';
 import { DetailsComponent } from './details.component';
 
 const routes: Routes = [
@@ -9,14 +9,14 @@ const routes: Routes = [
     component: DetailsComponent,
     children: [
       {
-        path: CategoriesEnum.Jewelery,
-        loadChildren: () => import('./containers/jewelery-container')
-          .then((m) => m.JeweleryContainerModule)
+        path: CategoriesEnum.Jewelry,
+        loadChildren: () => import('./containers/jewelry-container')
+          .then((m) => m.JewelryContainerModule)
       },
       {
-        path: `${CategoriesEnum.Jewelery}/:id`,
-        loadChildren: () => import('../../pages/categories/jewelery')
-          .then((m) => m.JeweleryModule)
+        path: `${CategoriesEnum.Jewelry}${QueryRouteEnum.Id}`,
+        loadChildren: () => import('../../pages/categories/jewelry')
+          .then((m) => m.JewelryModule)
       },
       {
         path: CategoriesEnum.Electronics,
@@ -24,7 +24,7 @@ const routes: Routes = [
           .then((m) => m.ElectronicsContainerModule)
       },
       {
-        path: `${CategoriesEnum.Electronics}/:id`,
+        path: `${CategoriesEnum.Electronics}${QueryRouteEnum.Id}`,
         loadChildren: () => import('../../pages/categories/electronics')
           .then((m) => m.ElectronicsModule)
       },
@@ -34,7 +34,7 @@ const routes: Routes = [
           .then((m) => m.MensContainerModule)
       },
       {
-        path: `${CategoriesEnum.Mens}/:id`,
+        path: `${CategoriesEnum.Mens}${QueryRouteEnum.Id}`,
         loadChildren: () => import('../../pages/categories/mens')
           .then((m) => m.MensModule)
       },
@@ -44,7 +44,7 @@ const routes: Routes = [
           .then((m) => m.WomensContainerModule)
       },
       {
-        path: `${CategoriesEnum.Womens}/:id`,
+        path: `${CategoriesEnum.Womens}${QueryRouteEnum.Id}`,
         loadChildren: () => import('../../pages/categories/womens')
           .then((m) => m.WomensModule)
       },

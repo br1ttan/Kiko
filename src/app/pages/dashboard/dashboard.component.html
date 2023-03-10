@@ -1,6 +1,6 @@
 <app-sort class="sort"></app-sort>
 <structure-item
-    *ngIf="products$ | async as data; 
+    *ngIf="data$ | async as data; 
     else loaderTemplate">
     <app-card
         (emitter)="onEventTrigger($event)"

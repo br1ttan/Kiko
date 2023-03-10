@@ -1,7 +1,8 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { PRODUCT_NAVIGATION_MAP } from '@core';
-import { INavigationCard, IProduct, ProductByCategoryService } from '@features';
+import { INavigationCard } from '@features/card';
+import { IProduct, ProductByCategoryService } from '@features/shop';
 import { SortedProductBySorterService } from '@features/shop/services/sorted-product-by-sorter.service';
 import { Observable } from 'rxjs';
 
@@ -12,14 +13,11 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent {
-  public data$ = this.sortedProducts.get$();
-  
-  public get products$(): Observable<IProduct[] | null> {
+  public get data$(): Observable<IProduct[] | null> {
     return this.sortedProduct.getSorterProduct$;
   }
-
+  
   constructor(
-    private readonly sortedProducts: ProductByCategoryService,
     private readonly router: Router,
     private readonly sortedProduct: SortedProductBySorterService
   ) {}

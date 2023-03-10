@@ -3,13 +3,13 @@ import { ProductCategoryEnum } from '@features/shop/enums';
 import { ProductFeedBase } from '../product-feed-base.component';
 
 @Component({
-  selector: 'app-jewelery',
-  templateUrl: './jewelery.component.html',
-  styleUrls: ['./jewelery.component.scss'],
+  selector: 'app-jewelry',
+  templateUrl: './jewelry.component.html',
+  styleUrls: ['./jewelry.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class JeweleryComponent extends ProductFeedBase {
+export class JewelryComponent extends ProductFeedBase {
   constructor() {
-    super(ProductCategoryEnum.Jewelery);
+    super(ProductCategoryEnum.Jewelry);
   }
 }

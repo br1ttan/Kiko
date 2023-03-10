@@ -4,5 +4,5 @@ export const PRODUCT_NAVIGATION_MAP = new Map<ProductCategoryEnum, string>([
     [ProductCategoryEnum.Electronics, 'electronics'],
     [ProductCategoryEnum.MensClothing, 'mens'],
     [ProductCategoryEnum.WomensClothing, 'womens'],
-    [ProductCategoryEnum.Jewelery, 'jewelery']
+    [ProductCategoryEnum.Jewelry, 'jewelry']
 ]);

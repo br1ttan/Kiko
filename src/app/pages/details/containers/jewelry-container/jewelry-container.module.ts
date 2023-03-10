@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { JeweleryContainerComponent } from './jewelery-container.component';
-import { JeweleryContainerRouting } from './jewelery-container.routing';
 import { FeaturesModule } from '@features';
 import { SharedModule } from '@shared';
+import { JewelryContainerComponent } from './jewelry-container.component';
+import { JewelryContainerRouting } from './jewelry-container.routing';
 
 @NgModule({
   declarations: [
-    JeweleryContainerComponent
+    JewelryContainerComponent
   ],
   imports: [
     CommonModule,
-    JeweleryContainerRouting,
+    JewelryContainerRouting,
     FeaturesModule,
     SharedModule
   ],
   exports: [
-    JeweleryContainerComponent
+    JewelryContainerComponent
   ]
 })
-export class JeweleryContainerModule { }
+export class JewelryContainerModule { }
