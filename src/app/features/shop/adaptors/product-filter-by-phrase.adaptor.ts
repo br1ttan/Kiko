@@ -5,15 +5,15 @@ import { Observable, map, of } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
-export class ConvertByPhraseProductAdaptor {
-    public convert(productArray: Observable<IProduct[]>, phrase: string): Observable<IProduct[]> {
-        return productArray
+export class ProductFilterByPhraseAdaptor {
+    public adapt(products: Observable<IProduct[]>, phrase: string): Observable<IProduct[]> {
+        return products
             .pipe(
-                map((products) => (
-                    products.filter((product) => (
+                map((product) => (
+                    product.filter((product) => (
                         product.title.toLowerCase().includes(phrase.toLowerCase()))
                     )
                 ))
-            )
+            );
     }
 }

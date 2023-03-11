@@ -6,17 +6,17 @@ import { IUserResponse } from "../interfaces";
     providedIn: 'root'
 })
 export class AuthState {
-    public get get$(): Observable<IUserResponse | null> {
-        return this.auth$.asObservable();
+    public get getUserData$(): Observable<IUserResponse | null> {
+        return this.userData$.asObservable();
     }
 
     public get isAuthenticated(): boolean {
-        return !!this.auth$.value;
+        return !!this.userData$.value;
     }
 
-    private readonly auth$ = new BehaviorSubject<IUserResponse | null>(null);
+    private readonly userData$ = new BehaviorSubject<IUserResponse | null>(null);
     
-    public set(userData: IUserResponse | null): void {
-        this.auth$.next(userData);
+    public setUserData(userData: IUserResponse | null): void {
+        this.userData$.next(userData);
     }
 }

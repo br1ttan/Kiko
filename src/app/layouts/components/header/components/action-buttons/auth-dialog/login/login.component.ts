@@ -92,7 +92,6 @@ export class LoginComponent implements OnDestroy {
           this.changeDetector.markForCheck();
         },
         error: (err) => {
-          console.log(err, 'erorrroorrror')
           this.isLoginError = true;
 
           this.changeDetector.markForCheck();

@@ -1,1 +1,1 @@
-export * from './sorted-product.state';
+export * from './product-sorting.state';

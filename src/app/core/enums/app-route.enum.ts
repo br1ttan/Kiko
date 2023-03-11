@@ -1,5 +1,5 @@
 export enum AppRouteEnum {
-    Dashboard = 'dashboard',
+    Dashboard = '',
     Shop = 'shop',
     Details = 'details',
     Search = 'search',

@@ -6,18 +6,18 @@ export const THREE_DATA: ITREE[] = [
     {
         name: 'Авто',
         active: false,
-        navigationName: SidebarEnum.Jewelery,
+        navigationName: SidebarEnum.Jewelry,
         children: [
             {
-                navigationName: SidebarEnum.Jewelery,
+                navigationName: SidebarEnum.Jewelry,
                 name: 'Легкові автомобілі',
             },
             {
-                navigationName: SidebarEnum.Jewelery,
+                navigationName: SidebarEnum.Jewelry,
                 name: 'Спецтехніка',
             },
             {
-                navigationName: SidebarEnum.Jewelery,
+                navigationName: SidebarEnum.Jewelry,
                 name: 'Причепи / будинки на колесах',
             },
         ]
@@ -25,16 +25,16 @@ export const THREE_DATA: ITREE[] = [
     {
         name: 'daasas',
         active: false,
-        navigationName: SidebarEnum.Jewelery,
+        navigationName: SidebarEnum.Jewelry,
         children: [
             {
-                navigationName: SidebarEnum.Jewelery,
+                navigationName: SidebarEnum.Jewelry,
                 name: 'danydasssssssssssssssssssssssssssssssssssssssssssssssssssssa',
             },
         ]
     },
     {
-        navigationName: SidebarEnum.Jewelery,
+        navigationName: SidebarEnum.Jewelry,
         name: 'dsadas',
     },
 ]

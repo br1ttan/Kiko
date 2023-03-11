@@ -5,8 +5,8 @@ import { Observable, map } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
-export class ConvertPriceToUahAdaptor {
-    public convert(products: Observable<IProduct[]>): Observable<IProduct[]> {
+export class ProductPriceToUahAdaptor {
+    public adapt(products: Observable<IProduct[]>): Observable<IProduct[]> {
         return products
             .pipe(
                 map((products) => (
@@ -17,6 +17,6 @@ export class ConvertPriceToUahAdaptor {
                         }
                     ))
                 ))
-            )
+            );
     }
 }

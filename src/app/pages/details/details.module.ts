@@ -4,7 +4,7 @@ import { DetailsComponent } from './details.component';
 import { DetailsRouting } from './details.routing';
 import { 
   ElectronicsContainerModule, 
-  JewelryContainerModule, 
+  JewelryContainerModule,
   MensContainerModule, 
   WomensContainerModule 
 } from './containers';

@@ -23,7 +23,7 @@ export class LoginService {
     
     private setAuthIfValid(response: IUserResponse): void {
         if (response) {
-            this.authService.set(response);
+            this.authService.setUserDataOrNull(response);
         }
     }
 }

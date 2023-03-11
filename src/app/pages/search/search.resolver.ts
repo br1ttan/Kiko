@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { IProduct, ProductByKeyPhrase } from '@features';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,9 @@ export class SearchResolver implements Resolve<IProduct[]> {
   ) {}
   
   public resolve(route: ActivatedRouteSnapshot): Observable<IProduct[]> {
-    return this.sortedProductByPhrase.getByPhrase(route.params['id']);
+    return this.sortedProductByPhrase.getByPhrase(route.params['id'])
+      .pipe(
+        take(1)
+      )
   }
 }

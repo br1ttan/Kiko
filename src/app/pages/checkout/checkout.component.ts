@@ -8,8 +8,8 @@ import { CartService } from '@features';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckoutComponent {
-  public data$ = this.cartService.get$;
-  public count$ = this.cartService.count$;
+  public readonly data$ = this.cartService.get$;
+  public readonly count$ = this.cartService.count$;
 
   constructor(
     private readonly cartService: CartService

@@ -21,7 +21,6 @@
     "useDefineForClassFields": false,
     "paths": {
       "@core": ["./src/app/core"],
-      "@core/*": ["./src/app/core/*"],
       "@layouts": ["./src/app/layouts"],
       "@layouts/*": ["./src/app/layouts/*"],
       "@features": ["./src/app/features"],

@@ -2,8 +2,8 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { PRODUCT_NAVIGATION_MAP } from '@core';
 import { INavigationCard } from '@features/card';
-import { IProduct, ProductByCategoryService } from '@features/shop';
-import { SortedProductBySorterService } from '@features/shop/services/sorted-product-by-sorter.service';
+import { IProduct } from '@features/shop';
+import { ProductSortingService } from '@features/shop/services/product-sorting.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -19,7 +19,7 @@ export class DashboardComponent {
   
   constructor(
     private readonly router: Router,
-    private readonly sortedProduct: SortedProductBySorterService
+    private readonly sortedProduct: ProductSortingService
   ) {}
 
   public onEventTrigger(object: INavigationCard): void {

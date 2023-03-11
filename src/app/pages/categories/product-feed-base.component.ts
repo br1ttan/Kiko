@@ -1,12 +1,12 @@
 import { inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CartService, CurrentProductById, IProduct } from '@features';
+import { CartService, ProductByIdService, IProduct } from '@features';
 import { ProductCategoryEnum } from '@features/shop/enums';
 import { map, switchMap } from 'rxjs';
 
 export abstract class ProductFeedBase {
     private readonly activatedRoute = inject(ActivatedRoute);
-    private readonly currentProductById = inject(CurrentProductById);
+    private readonly currentProductById = inject(ProductByIdService);
     private readonly cartService = inject(CartService);
     private readonly productEnum!: ProductCategoryEnum;
 

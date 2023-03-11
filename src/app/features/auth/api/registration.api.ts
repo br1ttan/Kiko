@@ -8,11 +8,15 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class RegistrationApi {
+    private readonly firebaseSignUpUrl = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
+
     constructor(
         private readonly http: HttpClient
     ) {}
 
     public register(user: IUserAuthData): Observable<IUserResponse> {
-        return this.http.post<IUserResponse>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.apiKey}`, user);
+        return this.http.post<IUserResponse>(
+            `${this.firebaseSignUpUrl}${environment.apiKey}`, user
+        );
     }
 }

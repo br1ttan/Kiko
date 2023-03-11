@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from '../interfaces';
 import { Observable, map } from 'rxjs';
-import { ProductCategoryEnum } from '../enums';
-import { ProductService } from '../services';
 
 @Injectable({
     providedIn: 'root'
 })
-export class ConvertByIdProductAdaptor {
-    constructor(
-        private readonly productService: ProductService
-    ) {}
-    public convert(productEnum: ProductCategoryEnum, id: string | number): Observable<IProduct> {
-        return this.productService.getByCategory(productEnum)
+export class ProductConverterByIdAdaptor {
+    public adapt(
+        products: Observable<IProduct[]>, 
+        id: string | number
+    ): Observable<IProduct> {
+        return products
             .pipe(
                 map((products) => (
                     products.filter((product) => (
@@ -20,6 +18,6 @@ export class ConvertByIdProductAdaptor {
                     ))
                 )),
                 map((products) => products[0])
-            )
+            );
     }
 }

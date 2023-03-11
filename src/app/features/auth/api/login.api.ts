@@ -8,15 +8,15 @@ import { IUserAuthData, IUserResponse } from '../interfaces';
     providedIn: 'root'
 })
 export class LoginApi {
-    public get token() {
-        return '';
-    }
-
+    private readonly firebaseSignInUrl = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
+    
     constructor(
         private readonly http: HttpClient
     ) {}
 
     public login(user: IUserAuthData): Observable<IUserResponse> {
-        return this.http.post<IUserResponse>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, user);
+        return this.http.post<IUserResponse>(
+            `${this.firebaseSignInUrl}${environment.apiKey}`, user
+        );
     }
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppRouteEnum, CheckoutGuard } from '@core';
+import { AppRouteEnum, CheckoutPageGuard, QueryRouteEnum } from '@core';
 import { MainLayoutComponent } from '@layouts';
 
 const routes: Routes = [
@@ -9,18 +9,18 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
-       path: '',
+       path: AppRouteEnum.Dashboard,
        loadChildren: () => import('./pages/dashboard')
         .then((m) => m.DashboardModule) 
       },
       {
-        path: `${AppRouteEnum.Search}/:id`,
+        path: `${AppRouteEnum.Search}${QueryRouteEnum.Id}`,
         loadChildren: () => import('./pages/search')
         .then((m) => m.SearchModule)
       },
       {
-        path: `${AppRouteEnum.Checkout}`,
-        canActivate: [CheckoutGuard],
+        path: AppRouteEnum.Checkout,
+        canActivate: [CheckoutPageGuard],
         loadChildren: () => import('./pages/checkout')
         .then((m) => m.CheckoutModule)
       },

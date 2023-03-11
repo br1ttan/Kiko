@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, AfterViewInit, OnInit, Component, ViewChild } from '@angular/core';
 import { MatSelect } from '@angular/material/select';
 import { ProductSortedEnum } from '@features/shop/enums';
-import { SortedProductBySorterService } from '@features/shop/services/sorted-product-by-sorter.service';
+import { ProductSortingService } from '@features/shop/services/product-sorting.service';
 
 @Component({
   selector: 'app-sort',
@@ -17,7 +17,7 @@ export class SortComponent implements OnInit, AfterViewInit {
   public materialSelect!: MatSelect;
 
   constructor(
-    private readonly sortedProduct: SortedProductBySorterService
+    private readonly sortedProduct: ProductSortingService
   ) {}
 
   public ngOnInit(): void {
@@ -29,7 +29,7 @@ export class SortComponent implements OnInit, AfterViewInit {
   }
 
   private initDefaultSorterProduct(): void {
-    this.sortedProduct.setSortedProduct(this.productCategorySortEnum.Default);
+    this.sortedProduct.setSortedProductsBySortingType(this.productCategorySortEnum.Default);
   }
 
   public onSortSelect(): void {
@@ -39,6 +39,6 @@ export class SortComponent implements OnInit, AfterViewInit {
     ) return;
 
     this.selectedValue = this.materialSelect.value;
-    this.sortedProduct.setSortedProduct(this.materialSelect.value);
+    this.sortedProduct.setSortedProductsBySortingType(this.materialSelect.value);
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, switchMap, of } from 'rxjs';
-import { ConvertByPhraseProductAdaptor } from '../adaptors/convert-by-phrase-products.adaptor';
+import { ProductFilterByPhraseAdaptor } from '../adaptors/product-filter-by-phrase.adaptor';
 import { IProduct } from '../interfaces';
 import { ProductService } from './product.service';
 
@@ -10,14 +10,14 @@ import { ProductService } from './product.service';
 export class ProductByKeyPhrase {
     constructor(
         private readonly productService: ProductService,
-        private readonly convertedByPhraseProductAdaptor: ConvertByPhraseProductAdaptor
+        private readonly productFilterByPhraseAdaptor: ProductFilterByPhraseAdaptor
     ) {}
 
     public getByPhrase(phrase: string): Observable<IProduct[]> {
         return this.productService.getAll()
             .pipe(
                 switchMap((products) => (
-                    this.convertedByPhraseProductAdaptor.convert(of(products), phrase))
+                    this.productFilterByPhraseAdaptor.adapt(of(products), phrase))
                 )
             );
     }

@@ -6,7 +6,7 @@ import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CheckoutGuard implements CanActivate, CanActivateChild {
+export class CheckoutPageGuard implements CanActivate, CanActivateChild {
   constructor(
     private readonly authService: AuthService,
     private readonly router: Router

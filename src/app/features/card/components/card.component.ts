@@ -4,7 +4,7 @@ import { ProductCategoryEnum } from '@features/shop/enums';
 import { INavigationCard } from '../interfaces';
 
 @Component({
-  selector: 'app-card',
+  selector: 'app-card[data]',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -21,8 +21,8 @@ export class CardComponent {
     id: string | number
   ): void {
     this.emitter.emit({
-      category: category,
-      id: id
+      category,
+      id
     });
   }
 }

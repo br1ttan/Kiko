@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, switchMap, of } from 'rxjs';
-import { ConvertPriceToUahAdaptor } from '../adaptors';
+import { ProductPriceToUahAdaptor  } from '../adaptors';
 import { ProductApi } from '../api';
 import { ProductCategoryEnum } from '../enums';
 import { IProduct } from '../interfaces';
@@ -11,20 +11,20 @@ import { IProduct } from '../interfaces';
 export class ProductService {
     constructor(
         private readonly productApi: ProductApi,
-        private readonly convertPriceAdaptor: ConvertPriceToUahAdaptor,
+        private readonly productPriceToUahAdaptor: ProductPriceToUahAdaptor ,
     ) {}
 
     public getAll(): Observable<IProduct[]> {
         return this.productApi.getAll()
             .pipe(
-                switchMap((products) => this.convertPriceAdaptor.convert(of(products)))
+                switchMap((products) => this.productPriceToUahAdaptor.adapt(of(products)))
             );
     }
 
     public getByCategory(category: ProductCategoryEnum): Observable<IProduct[]> {
         return this.productApi.getByCategory(category)
-        .pipe(
-            switchMap((products) => this.convertPriceAdaptor.convert(of(products)))
-        );
+            .pipe(
+                switchMap((products) => this.productPriceToUahAdaptor.adapt(of(products)))
+            );
     }
 }

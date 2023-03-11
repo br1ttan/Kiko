@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { filter, Observable, Subject, takeUntil } from 'rxjs';
+import { filter, Observable, Subject, takeUntil, tap } from 'rxjs';
 import { IUserResponse } from '../interfaces';
 import { AuthState } from '../states';
 import { AuthStorageService } from './auth-storage.service';
@@ -9,14 +9,14 @@ import { AuthStorageService } from './auth-storage.service';
 })
 export class AuthService implements OnDestroy {
     public get authorizedUser$(): Observable<IUserResponse | null> {
-        return this.authState.get$;
+        return this.authState.getUserData$;
     }
 
     public get isAuthenticated(): boolean {
         return this.authState.isAuthenticated;
     }
     
-    private subject$ = new Subject();
+    private readonly subject$ = new Subject();
 
     constructor(
         private readonly authState: AuthState,
@@ -29,14 +29,13 @@ export class AuthService implements OnDestroy {
     }
     
     public autoLogin(): void {
-        const response = this.authStorageService.getUserData;
+        const userData = this.authStorageService.getUserData;
 
-        if (response !== null) {
-            this.set(response);
-            return;
+        if (!userData) {
+            return this.initAuthStorage();
         }
 
-        this.initAuthStorage();
+        this.setUserDataOrNull(userData);
     }
 
     public initAuthStorage(): void {
@@ -46,16 +45,16 @@ export class AuthService implements OnDestroy {
                 takeUntil(this.subject$)
             )
             .subscribe((userData) => (
-                this.authStorageService.setUserData = (userData!)
+                this.authStorageService.setUserData(userData!)
             ))
     }
     
     public logout(): void {
-        this.set(null);
+        this.setUserDataOrNull(null);
         this.authStorageService.removeUserData();
     }
 
-    public set(userData: IUserResponse | null): void {
-        this.authState.set(userData);
+    public setUserDataOrNull(userData: IUserResponse | null): void {
+        this.authState.setUserData(userData);
     }
 }

@@ -1,3 +1,3 @@
-export * from './convert-by-id-product.adaptor';
-export * from './convert-by-phrase-products.adaptor';
-export * from './convert-price-to-uah.adaptor';
+export * from './product-by-id.adaptor';
+export * from './product-filter-by-phrase.adaptor';
+export * from './product-price-to-uah.adaptor';

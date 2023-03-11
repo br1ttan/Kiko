@@ -6,25 +6,23 @@ import { IUserResponse } from "../interfaces";
     providedIn: 'root'
 })
 export class AuthStorageService {
-    public get getUserData(): IUserResponse | null {
-        const userData = this.storage.getItem('userData');
+    private readonly userDataKey = 'userData';
 
-        if (userData) {
-            return JSON.parse(userData);
-        }
+    public get getUserData(): IUserResponse {
+        const userData = this.storage.getItem(this.userDataKey);
 
-        return null;
-    }
-    
-    public set setUserData(userData: IUserResponse) {
-        this.storage.setItem('userData', JSON.stringify(userData));
+        return JSON.parse(userData!);
     }
 
     constructor(
         @Inject(STORAGE_TOKEN) private readonly storage: Storage
     ) {}
+    
+    public setUserData(userData: IUserResponse): void {
+        this.storage.setItem(this.userDataKey, JSON.stringify(userData));
+    }
 
     public removeUserData(): void {
-        this.storage.removeItem('userData');
+        this.storage.removeItem(this.userDataKey);
     }
 }

@@ -1,1 +1,1 @@
-export * from './checkout.guard';
+export * from './checkout-page.guard';

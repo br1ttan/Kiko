@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
-import { SortedProductState } from '../states';
+import { ProductSortingState } from '../states';
 import { Observable, map, take } from 'rxjs';
 import { IProduct } from '../interfaces';
 import { ProductService } from './product.service';
-import { ConvertPriceToUahAdaptor } from '../adaptors';
+import { ProductPriceToUahAdaptor  } from '../adaptors';
 import { ProductSortedEnum } from '../enums';
 
 @Injectable({
     providedIn: 'root'
 })
-export class SortedProductBySorterService {
+export class ProductSortingService {
     public get getSorterProduct$(): Observable<IProduct[] | null> {
-        return this.sortedProductState.getSortedProduct$;
+        return this.productSortingState.getSortedProduct$;
     }
 
     constructor(
-        private readonly sortedProductState: SortedProductState,
+        private readonly productSortingState: ProductSortingState,
         private readonly productService: ProductService,
-        private readonly convertPriceAdaptor: ConvertPriceToUahAdaptor
     ) {}
     
     public getAll(): Observable<IProduct[]> {
@@ -38,16 +37,16 @@ export class SortedProductBySorterService {
             );
     }
     
-    public setSortedProduct(sortedEnum: ProductSortedEnum): void {
+    public setSortedProductsBySortingType(sortedEnum: ProductSortedEnum): void {
         switch(sortedEnum) {
             case ProductSortedEnum.Default:
-                this.sortedProductState.set(this.getAll().pipe(take(1)))
+                this.productSortingState.setSortedProduct(this.getAll())
                 break;
             case ProductSortedEnum.Expensive:
-                this.sortedProductState.set(this.getByExpensive().pipe(take(1)))
+                this.productSortingState.setSortedProduct(this.getByExpensive())
                 break;
             case ProductSortedEnum.Cheap:
-                this.sortedProductState.set(this.getByCheap().pipe(take(1)))
+                this.productSortingState.setSortedProduct(this.getByCheap())
                 break;
         }
     }
